@@ -1,5 +1,5 @@
 #include "voilier.h"
 
-voilier::voilier()
+Voilier::Voilier()
 {
 }

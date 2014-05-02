@@ -2,19 +2,25 @@
 #define UTILISATEUR_H
 
 #include <iostream>
+#include <vector>
+#include "regate.h"
+
+using namespace std;
+
 
 class Utilisateur
 {
 
-int id;
-std::string nom;
-
-
+    string nom;
+    vector<Regate> regates ;
 
 public:
+
     Utilisateur();
+    Utilisateur(string);
     ~Utilisateur();
 
+    void addRegate();
 
 };
 
