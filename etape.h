@@ -10,6 +10,7 @@ class Etape
 {
 
     int id;
+    string nom;
     int distance;
     int numOrdre;
 
@@ -17,6 +18,8 @@ class Etape
 
 public:
     Etape();
+    Etape(int, string, int, int);
+    void description();
 
 
 

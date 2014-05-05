@@ -19,7 +19,10 @@ class Regate
 
 
 public:
-    Regate();
+    Regate( int , string );
+    void addEtape(int, string, int , int);
+    void description();
+
 
 };
 

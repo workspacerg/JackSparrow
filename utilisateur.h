@@ -20,7 +20,8 @@ public:
     Utilisateur(string);
     ~Utilisateur();
 
-    void addRegate();
+    void addRegate(int, string);
+    void addEtapeToRegate(int, string, int,int,int);
 
 };
 
