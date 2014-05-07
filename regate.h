@@ -21,9 +21,12 @@ class Regate
 public:
     Regate( int , string );
     void addEtape(int, string, int , int);
+    void addVoilier( int id , string nom, float longueur, float poids, float coef );
     void description();
 
 
+    int getId() const;
+    void setId(int value);
 };
 
 #endif // REGATE_H

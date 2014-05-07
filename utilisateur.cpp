@@ -18,8 +18,6 @@ Utilisateur::Utilisateur(string _name)
 Utilisateur::~Utilisateur()
 {
 
-
-
 }
 
 
@@ -29,13 +27,43 @@ Utilisateur::~Utilisateur()
 void Utilisateur::addRegate(int _id, string _nom){
 
     regates.push_back(Regate(_id,_nom));
-    regates[0].description();
+    //    regates[0].description();
 
 }
 
 void Utilisateur::addEtapeToRegate(int _idEtape , string _nomEtape, int _distance, int _ordre ,int _idRegate){
 
-    regates[_idRegate - 1].addEtape(_idEtape, _nomEtape , _distance, _ordre);
-    regates[0].description();
+    if (shearchVoilierById(_idRegate) == -1)
+    {
+        cout << "L'id n'existe pas ! " <<endl << endl ;
+        return ;
+    }
+
+    regates[shearchVoilierById(_idRegate)].addEtape(_idEtape, _nomEtape , _distance, _ordre);
+
+
+}
+
+void Utilisateur::addVoilierToRegate(int id, string nom, float longueur, float poids, float coef, int idRegate)
+{
+
+    if (shearchVoilierById(idRegate) == -1)
+    {
+        cout << "L'id n'existe pas ! " <<endl << endl ;
+        return ;
+    }
+
+    regates[shearchVoilierById(idRegate)].addVoilier(id,nom,longueur,poids,coef);
+
+}
+
+int Utilisateur::shearchVoilierById(int id){
+
+    for(int i =  0 ; i < regates.size() ; i++ )
+    {
+        if (regates[i].getId() == id)
+            return i;
+    }
+    return -1;
 }
 

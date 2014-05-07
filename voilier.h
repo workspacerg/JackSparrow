@@ -20,6 +20,8 @@ class Voilier
 
 public:
     Voilier();
+    Voilier(int id, string nom, float longueur, float poids, float coef);
+    void description();
 
 
 };

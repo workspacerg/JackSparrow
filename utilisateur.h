@@ -11,10 +11,12 @@ using namespace std;
 class Utilisateur
 {
 
-    string nom;
-    vector<Regate> regates ;
+
 
 public:
+
+    string nom;
+    vector<Regate> regates ;
 
     Utilisateur();
     Utilisateur(string);
@@ -22,6 +24,8 @@ public:
 
     void addRegate(int, string);
     void addEtapeToRegate(int, string, int,int,int);
+    void addVoilierToRegate(int id, string nom, float longueur, float poids, float coef, int idRegate );
+    int shearchVoilierById(int id);
 
 };
 

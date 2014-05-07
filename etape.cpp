@@ -15,8 +15,9 @@ Etape::Etape(int _id, string _nom , int _distance, int _numOrdre){
 }
 
 void Etape::description(){
-
-    cout << "Je suis l'étapes n° " << id << " nommer " << nom << " ." << endl ;
-    cout << "Une distance de " << distance << " km " << nom << " ." << endl ;
-
+    cout << endl;
+    cout << " |  Numéro Etape : " << numOrdre << endl ;
+    cout << " |  Nom :" << nom << endl ;
+    cout << " |  Distance : " << distance << " km " << endl ;
+    cout << endl;
 }
