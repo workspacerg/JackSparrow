@@ -1,5 +1,34 @@
 #include "utilisateur.h"
 
+///
+///Getter / Setter
+///
+
+string Utilisateur::getNom() const
+{
+    return nom;
+}
+
+void Utilisateur::setNom(const string &value)
+{
+    nom = value;
+}
+
+vector<Regate> Utilisateur::getRegates() const
+{
+    return regates;
+}
+
+void Utilisateur::setRegates(const vector<Regate> &value)
+{
+    regates = value;
+}
+
+
+///
+/// Constructeur
+///
+
 Utilisateur::Utilisateur()
 {
 
@@ -13,17 +42,58 @@ Utilisateur::Utilisateur(string _name)
     this->nom = _name;
     //cout << "Je me nomme : " << this->nom << endl <<endl ;
 
- }
+}
+
+Utilisateur::Utilisateur(const Utilisateur& Source)
+{
+    nom = Source.getNom();
+    regates = Source.getRegates();
+}
+
+
+
+///
+/// Destructeur
+///
+
 
 Utilisateur::~Utilisateur()
 {
-
+    delete this;
 }
 
 
 ///
-/// Création d'une nouvelle regate
+/// Surcharge
 ///
+///
+
+Utilisateur Utilisateur::operator =(const Utilisateur & Source)
+{
+
+    cout << "operator =()" ;
+
+    if (this != &Source)
+    {
+        // Si ce n'est pas le cas, on détruit l'objet existant.
+
+        setNom("");
+        getRegates().clear();
+
+        setNom(Source.getNom());
+        setRegates(Source.getRegates());
+
+    }
+    return (*this); // on retourne l'objet appelant.
+}
+
+///
+/// Méthode
+///
+
+
+
+
 void Utilisateur::addRegate(int _id, string _nom){
 
     regates.push_back(Regate(_id,_nom));
@@ -59,7 +129,7 @@ void Utilisateur::addVoilierToRegate(int id, string nom, float longueur, float p
 
 int Utilisateur::shearchVoilierById(int id){
 
-    for(int i =  0 ; i < regates.size() ; i++ )
+    for(int i =  0 ; i < (int) regates.size() ; i++ )
     {
         if (regates[i].getId() == id)
             return i;

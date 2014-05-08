@@ -11,6 +11,48 @@ void Regate::setId(int value)
 {
     id = value;
 }
+
+string Regate::getNom() const
+{
+    return nom;
+}
+
+void Regate::setNom(const string &value)
+{
+    nom = value;
+}
+
+vector<Etape> Regate::getEtapes() const
+{
+    return etapes;
+}
+
+void Regate::setEtapes(const vector<Etape> &value)
+{
+    etapes = value;
+}
+
+vector<Voilier> Regate::getVoiliers() const
+{
+    return voiliers;
+}
+
+void Regate::setVoiliers(const vector<Voilier> &value)
+{
+    voiliers = value;
+}
+
+///
+/// Construccteur / Destucteur / Surcharge
+///
+
+Regate::Regate(){
+
+    id = -1 ;
+    nom = "Default name";
+
+}
+
 Regate::Regate(int _id,string _nom)
 {
 
@@ -19,6 +61,23 @@ Regate::Regate(int _id,string _nom)
 
 }
 
+Regate::Regate(const Regate & Source)
+{
+        id = Source.getId();
+        nom = Source.getNom();
+        etapes = Source.getEtapes();
+        voiliers = Source.getVoiliers();
+}
+
+Regate Regate::operator =(const Regate &Source)
+{
+
+    return *this;
+}
+
+///
+/// Méthode
+///
 
 void Regate::description(){
 
