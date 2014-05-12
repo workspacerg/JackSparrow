@@ -25,7 +25,7 @@ public:
     /// Constructeur Par recopie
     Classement(const Classement & Source);
     /// Opérateur d'affectation
-
+    Classement& operator =(const Classement& Source);
     /// Destructeur
     ~Classement();
 

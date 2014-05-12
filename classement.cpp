@@ -45,6 +45,26 @@ Classement::Classement(const Classement &Source)
     temps = Source.getTemps() ;
 }
 
+Classement &Classement::operator =(const Classement &Source)
+{
+    if(this != &Source)
+    {
+
+        setId(-1);
+        setPlace(0);
+        setTemps(0);
+
+
+        setId(Source.getId());
+        setPlace(Source.getPlace());
+        setTemps(Source.getTemps());
+
+
+    }
+
+    return *this;
+}
+
 Classement::~Classement()
 {
 

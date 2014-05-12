@@ -32,7 +32,7 @@ public:
     /// Constructeur Par recopie
     Etape(const Etape & Source);
     /// Opérateur d'affectation
-
+    Etape& operator =(const Etape& Source);
     /// Destructeur
     ~Etape();
 

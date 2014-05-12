@@ -31,9 +31,9 @@ public:
     /// Constructeur Par recopie
     Regate(const Regate & Source);
     /// Opérateur d'affectation
-    Regate operator =( const Regate & Source);
+    Regate& operator =( const Regate & Source);
     /// Destructeur
-    //~Regate();
+    ~Regate();
 
     ///
     ///Getter / Setter

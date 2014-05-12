@@ -29,6 +29,29 @@ Etape::Etape(const Etape &Source)
 
 }
 
+Etape &Etape::operator =(const Etape &Source)
+{
+
+    if(this != &Source)
+    {
+
+        setId(-1);
+        setNom("");
+        setNumOrdre(-1);
+        setDistance(0);
+
+        setId(Source.getId());
+        setNom(Source.getNom());
+        setNumOrdre(Source.getNumOrdre());
+        setDistance(Source.getDistance());
+
+
+    }
+
+    return *this;
+
+}
+
 Etape::~Etape(){
 
 

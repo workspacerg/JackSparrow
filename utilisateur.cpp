@@ -72,7 +72,7 @@ Utilisateur::~Utilisateur()
 Utilisateur& Utilisateur::operator =(const Utilisateur & Source)
 {
 
-    cout << "operator =()" ;
+
 
     if (this != &Source)
     {

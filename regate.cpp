@@ -69,10 +69,29 @@ Regate::Regate(const Regate & Source)
         voiliers = Source.getVoiliers();
 }
 
-Regate Regate::operator =(const Regate &Source)
+Regate& Regate::operator =(const Regate &Source)
 {
+    if(this != &Source)
+    {
+
+        id = -1 ;
+        nom = "" ;
+        etapes.clear();
+        voiliers.clear();
+
+        setEtapes(Source.getEtapes());
+        setId(Source.getId());
+        setNom(Source.getNom());
+        setVoiliers(Source.getVoiliers());
+
+    }
 
     return *this;
+}
+
+Regate::~Regate()
+{
+
 }
 
 ///
