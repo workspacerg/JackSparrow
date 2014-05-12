@@ -1,11 +1,19 @@
 #ifndef CLASSEUR_H
 #define CLASSEUR_H
 
+#include <vector>
+#include <iostream>
+#include "classement.h"
+#include "etape.h"
+#include "voilier.h"
+
 class Classeur
 {
 
 
-
+    Classement classement;
+    Etape * etape ;
+    Voilier * voilier ;
 
 
 public:
@@ -23,6 +31,8 @@ public:
     Classeur& operator =(const Classeur& Source);
     /// Destructeur
     ~Classeur();
+
+
 
 
 
