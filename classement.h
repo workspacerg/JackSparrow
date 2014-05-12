@@ -3,15 +3,17 @@
 
 
 #include <iostream>
+#include "voilier.h"
 using namespace std;
 
 
 class Classement
 {
 
-    int id;
-    int place;
-    float temps;
+    int id ;
+    int place ;
+    float temps ;
+    Voilier * voilier ;
 
 
 public:
@@ -22,13 +24,14 @@ public:
 
     /// Constructeur Par default
     Classement();
+    /// Constructeur Param
+    Classement(Voilier & value, int place, float temps);
     /// Constructeur Par recopie
     Classement(const Classement & Source);
     /// Opérateur d'affectation
     Classement& operator =(const Classement& Source);
     /// Destructeur
     ~Classement();
-
 
     ///
     ///Getter / Setter
@@ -42,6 +45,12 @@ public:
 
     float getTemps() const;
     void setTemps(float value);
+
+    Voilier *getVoilier() const;
+    void setVoilier(Voilier *value);
+
+    void description();
+
 };
 
 #endif // CLASSEMENT_H

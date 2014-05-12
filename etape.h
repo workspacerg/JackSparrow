@@ -1,8 +1,10 @@
 #ifndef ETAPE_H
 #define ETAPE_H
 
-
 #include <iostream>
+#include "classement.h"
+#include <vector>
+
 using namespace std;
 
 
@@ -13,13 +15,10 @@ class Etape
     string nom;
     int distance;
     int numOrdre;
-
+    vector<Classement> classements;
 
 
 public:
-
-
-
 
     ///
     /// Forme de Copelien: Construccteur / Destucteur / Surcharge
@@ -35,8 +34,6 @@ public:
     Etape& operator =(const Etape& Source);
     /// Destructeur
     ~Etape();
-
-
 
     ///
     ///Getter / Setter
@@ -54,11 +51,15 @@ public:
     int getNumOrdre() const;
     void setNumOrdre(int value);
 
+    vector<Classement> getClassements() const;
+    void setClassements(const vector<Classement> &value);
+
     ///
     /// Méthode
     ///
 
     void description();
+    void addClassement(Voilier *value, int place , float temps);
 
 };
 

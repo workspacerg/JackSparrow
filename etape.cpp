@@ -1,5 +1,15 @@
 #include "etape.h"
 
+
+vector<Classement> Etape::getClassements() const
+{
+    return classements;
+}
+
+void Etape::setClassements(const vector<Classement> &value)
+{
+    classements = value;
+}
 Etape::Etape()
 {
 
@@ -114,4 +124,12 @@ void Etape::description(){
     cout << " |  Nom :" << nom << endl ;
     cout << " |  Distance : " << distance << " km " << endl ;
     cout << endl;
+}
+
+void Etape::addClassement(Voilier *value, int place, float temps)
+{
+
+   // cout << "Valeur de voilier : " << value << endl;
+    classements.push_back(Classement(*value, place , temps));
+
 }

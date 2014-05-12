@@ -24,13 +24,18 @@ int main()
 
     //User.getRegates()[User.shearchVoilierById(1)].description();
 
+    User.getRegates()[0].getEtapes()[0].description();
+    User.getRegates()[0].getVoiliers()[0].description();
+    User.getRegates()[0].getEtapes()[0].addClassement(&User.getRegates()[0].getVoiliers()[0], 1 , 10.60 );
+    User.getRegates()[0].getEtapes()[0].getClassements()[0].description();
 
+
+    /*
     Utilisateur User2 = Utilisateur();
     cout << endl << User2.getNom() << endl;
     User2 = User;
     User2.getRegates()[User.shearchVoilierById(1)].description();
-
-
+    */
 
 
     return 0;
