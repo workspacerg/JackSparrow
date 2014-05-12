@@ -8,12 +8,14 @@ SOURCES += main.cpp \
     voilier.cpp \
     regate.cpp \
     etape.cpp \
-    classement.cpp
+    classement.cpp \
+    classeur.cpp
 
 HEADERS += \
     utilisateur.h \
     regate.h \
     etape.h \
     classement.h \
-    voilier.h
+    voilier.h \
+    classeur.h
 
