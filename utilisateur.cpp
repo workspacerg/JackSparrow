@@ -87,6 +87,7 @@ Utilisateur Utilisateur::operator =(const Utilisateur & Source)
     return (*this); // on retourne l'objet appelant.
 }
 
+
 ///
 /// Méthode
 ///
