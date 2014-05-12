@@ -1,5 +1,6 @@
 #include <iostream>
 #include "utilisateur.h"
+#include <string>
 
 
 using namespace std;
@@ -26,8 +27,10 @@ int main()
 
     User.getRegates()[0].getEtapes()[0].description();
     User.getRegates()[0].getVoiliers()[0].description();
-    User.getRegates()[0].getEtapes()[0].addClassement(&User.getRegates()[0].getVoiliers()[0], 1 , 10.60 );
-    User.getRegates()[0].getEtapes()[0].getClassements()[0].description();
+    Etape et = User.getRegates()[0].getEtapes()[0];
+    Voilier v = User.getRegates()[0].getVoiliers()[0];
+    et.addClassement(v, 1 , 10.60 );
+    et.getClassementsProvisoire()[0].description();
 
 
     /*

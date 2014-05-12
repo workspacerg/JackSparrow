@@ -1,8 +1,12 @@
 #include "etape.h"
+#include <string>
 
-
-vector<Classement> Etape::getClassements() const
+vector<Classement> Etape::getClassementsProvisoire() const
 {
+    return classements;
+}
+
+vector<Classement> Etape:: getClassementsFinal() const{
     return classements;
 }
 
@@ -126,10 +130,11 @@ void Etape::description(){
     cout << endl;
 }
 
-void Etape::addClassement(Voilier *value, int place, float temps)
+void Etape::addClassement(Voilier& value, int place, float temps)
 {
+    value.description();
 
    // cout << "Valeur de voilier : " << value << endl;
-    classements.push_back(Classement(*value, place , temps));
+    classements.push_back(Classement(value, place , temps));
 
 }

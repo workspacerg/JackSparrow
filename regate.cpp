@@ -1,5 +1,6 @@
 #include "regate.h"
 #include <vector>
+#include <string>
 
 
 int Regate::getId() const
@@ -148,6 +149,6 @@ void Regate::addEtape(int _id, string _nom , int _distance, int _numOrdre){
 void Regate::addVoilier(int id, string nom, float longueur, float poids, float coef)
 {
 
-    voiliers.push_back(Voilier(id, nom, longueur, poids, coef));
+    voiliers.push_back(Voilier(id, nom, longueur, poids));
 
 }

@@ -17,10 +17,11 @@ class Voilier
     float poids;
     float coefCorr;
 
-
+private:
+    float getCoeff(float);
 public:
     Voilier();
-    Voilier(int id, string nom, float longueur, float poids, float coef);
+    Voilier(int id, string nom, float longueur, float poids);
     void description();
 
 

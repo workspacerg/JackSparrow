@@ -44,7 +44,7 @@ void Classement::setVoilier(Voilier *value)
 
 void Classement::description()
 {
-
+   voilier->description();
 }
 
 Classement::Classement()

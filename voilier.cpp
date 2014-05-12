@@ -1,18 +1,32 @@
 #include "voilier.h"
+#include <string>
 
 Voilier::Voilier()
 {
 }
 
-Voilier::Voilier(int id, string nom, float longueur, float poids, float coef)
+Voilier::Voilier(int id, string nom, float longueur, float poids)
 {
     this->id = id ;
     this->nom = nom ;
     this->longueur = longueur ;
     this->poids = poids ;
-    this->coefCorr =coef;
+    this->coefCorr = getCoeff(longueur);
 }
 
+float Voilier::getCoeff(float longueur){
+    float coef = 1;
+    if(longueur > 20){
+        for(int i=20;i<=longueur;i++)
+            coef += 0.05;
+    }
+    else if(longueur < 20){
+        for(int i=20;i>=longueur;i--){
+            coef -= 0.05;
+        }
+    }
+    return coef;
+}
 void Voilier::description()
 {
     cout << endl ;
