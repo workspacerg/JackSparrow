@@ -60,7 +60,7 @@ Utilisateur::Utilisateur(const Utilisateur& Source)
 Utilisateur::~Utilisateur()
 {
 
-    delete this;
+
 }
 
 
