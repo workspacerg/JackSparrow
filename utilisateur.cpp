@@ -59,6 +59,7 @@ Utilisateur::Utilisateur(const Utilisateur& Source)
 
 Utilisateur::~Utilisateur()
 {
+
     delete this;
 }
 
@@ -68,7 +69,7 @@ Utilisateur::~Utilisateur()
 ///
 ///
 
-Utilisateur Utilisateur::operator =(const Utilisateur & Source)
+Utilisateur& Utilisateur::operator =(const Utilisateur & Source)
 {
 
     cout << "operator =()" ;

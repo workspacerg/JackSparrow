@@ -22,14 +22,14 @@ int main()
 
     cout << endl << "Test" << endl;
 
-    User.getRegates()[User.shearchVoilierById(1)].description();
+    //User.getRegates()[User.shearchVoilierById(1)].description();
 
-/*
+
     Utilisateur User2 = Utilisateur();
     cout << endl << User2.getNom() << endl;
     User2 = User;
     User2.getRegates()[User.shearchVoilierById(1)].description();
-*/
+
 
 
 

@@ -31,7 +31,7 @@ public:
     /// Constructeur Par recopie
     Utilisateur(const Utilisateur&);
     /// Opérateur d'affectation
-    Utilisateur operator=(const Utilisateur&);
+    Utilisateur& operator=(const Utilisateur&);
     /// Destructeur
     ~Utilisateur();
 
