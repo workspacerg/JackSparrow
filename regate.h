@@ -55,8 +55,9 @@ public:
     /// Méthode
     ///
 
+
     void addEtape(int, string, int , int);
-    void addVoilier( int id , string nom, float longueur, float poids, float coef );
+    void addVoilier( int id , string nom, float longueur, float poids);
     void description();
 
 

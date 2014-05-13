@@ -1,4 +1,5 @@
 #include "classement.h"
+#include <sstream>
 
 
 int Classement::getId() const
@@ -42,9 +43,12 @@ void Classement::setVoilier(Voilier *value)
     voilier = value;
 }
 
-void Classement::description()
+string Classement::getDescription()
 {
-   voilier->description();
+    std::ostringstream s;
+    string em = (getPlace() == 1) ? "er" : "eme";
+    s<<getPlace()<<em<<" | "<<"Voilier : "<<voilier->getNom()<<" | Temps : " << getTemps();
+    return s.str();
 }
 
 Classement::Classement()
@@ -54,13 +58,10 @@ Classement::Classement()
     temps = 0 ;
 }
 
-Classement::Classement(Voilier &value, int place, float temps)
+Classement::Classement(Voilier &value, float temps)
 {
-    voilier = &value ;
-    setPlace(place);
+    voilier = &value;
     setTemps(temps);
-
-    cout << "Fin du constructeur > " << getPlace() << " - " << getTemps() << endl ;
 }
 
 Classement::Classement(const Classement &Source)
@@ -71,23 +72,22 @@ Classement::Classement(const Classement &Source)
     voilier = Source.getVoilier() ;
 }
 
-Classement &Classement::operator =(const Classement &Source)
+
+Classement& Classement::operator =(const Classement &Source)
 {
     if(this != &Source)
     {
-        setId(-1);
-        setPlace(0);
-        setTemps(0);
-
         setId(Source.getId());
         setPlace(Source.getPlace());
         setTemps(Source.getTemps());
+        setVoilier(Source.getVoilier());
     }
 
     return *this;
 }
 
+
 Classement::~Classement()
 {
-
+    //delete voilier;
 }

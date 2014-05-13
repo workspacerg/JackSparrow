@@ -53,7 +53,7 @@ public:
 
     void addRegate(int, string);
     void addEtapeToRegate(int, string, int,int,int);
-    void addVoilierToRegate(int id, string nom, float longueur, float poids, float coef, int idRegate );
+    void addVoilierToRegate(int id, string nom, float longueur, float poids, int idRegate );
 
 };
 

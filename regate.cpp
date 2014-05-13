@@ -140,13 +140,11 @@ cout << endl;
 
 void Regate::addEtape(int _id, string _nom , int _distance, int _numOrdre){
 
-    cout << "Création de l'étape : " << _nom<<endl;
-
     etapes.push_back(Etape(_id, _nom , _distance , _numOrdre));
 
 }
 
-void Regate::addVoilier(int id, string nom, float longueur, float poids, float coef)
+void Regate::addVoilier(int id, string nom, float longueur, float poids)
 {
 
     voiliers.push_back(Voilier(id, nom, longueur, poids));

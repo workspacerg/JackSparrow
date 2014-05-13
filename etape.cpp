@@ -1,13 +1,40 @@
 #include "etape.h"
 #include <string>
+#include <algorithm>
 
-vector<Classement> Etape::getClassementsProvisoire() const
+struct sortWithCoeff
 {
+    bool operator() (Classement struct1, Classement struct2)
+    {
+        return (struct1.getTemps()*struct1.getVoilier()->getCoeff() < struct2.getTemps()*struct2.getVoilier()->getCoeff());
+    }
+};
+
+struct sortNoCoeff{
+    bool operator() (Classement clas1, Classement clas2)
+    {
+        return (clas1.getTemps() < clas2.getTemps());
+    }
+};
+
+vector<Classement> Etape::getClassementsProvisoire()
+{
+    std::sort(classements.begin(),classements.end(),sortNoCoeff());
+    for(int i=0;i<classements.size();i++)
+        classements[i].setPlace(i+1);
+
     return classements;
 }
 
-vector<Classement> Etape:: getClassementsFinal() const{
-    return classements;
+vector<Classement> Etape:: getClassementsFinal(){
+    // Copie pour ne pas affecter le classement provisoire
+    vector<Classement> classFinal = classements;
+    std::sort(classFinal.begin(),classFinal.end(),sortWithCoeff());
+    for(int i=0;i<classFinal.size();i++){
+        classFinal[i].setTemps(classFinal[i].getTemps() * classFinal[i].getVoilier()->getCoeff());
+        classFinal[i].setPlace(i+1);
+    }
+    return classFinal;
 }
 
 void Etape::setClassements(const vector<Classement> &value)
@@ -130,11 +157,10 @@ void Etape::description(){
     cout << endl;
 }
 
-void Etape::addClassement(Voilier& value, int place, float temps)
+void Etape::addClassement(Voilier& value, float temps)
 {
-    value.description();
 
    // cout << "Valeur de voilier : " << value << endl;
-    classements.push_back(Classement(value, place , temps));
+    classements.push_back(Classement(value , temps));
 
 }

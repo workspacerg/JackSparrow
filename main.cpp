@@ -1,45 +1,50 @@
 #include <iostream>
 #include "utilisateur.h"
 #include <string>
-
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-
-    cout << endl << endl;
-
+    // Création utilisateur
     Utilisateur User = Utilisateur("Romain");
-    cout << endl << User.getNom() << endl;
 
+    // Création d'une régate
     User.addRegate(1, "Capitain crochet2");
 
-    User.addVoilierToRegate(1,"Black pearl", 15.2, 12000 , 1 , 1 );
+    // On ajoute les participants à la régate
+    User.addVoilierToRegate(1,"Black pearl", 20, 12000 , 1 );
+    User.addVoilierToRegate(2,"Black pearl Speed", 21, 13000  , 1 );
+    User.addVoilierToRegate(3,"Black pearl Slow", 22, 15000 , 1 );
 
     User.addEtapeToRegate(1,"PiedTendre", 13 , 1 , 1);
     User.addEtapeToRegate(1,"Bras dure", 11 , 2 , 1);
     User.addEtapeToRegate(1,"Tête vide", 45 , 3 , 1);
 
-    cout << endl << "Test" << endl;
-
-    //User.getRegates()[User.shearchVoilierById(1)].description();
-
-    User.getRegates()[0].getEtapes()[0].description();
-    User.getRegates()[0].getVoiliers()[0].description();
     Etape et = User.getRegates()[0].getEtapes()[0];
     Voilier v = User.getRegates()[0].getVoiliers()[0];
-    et.addClassement(v, 1 , 10.60 );
-    et.getClassementsProvisoire()[0].description();
+    Voilier v2 = User.getRegates()[0].getVoiliers()[1];
+    Voilier v3 = User.getRegates()[0].getVoiliers()[2];
+
+    et.addClassement(v, 11.1 );
+    et.addClassement(v2, 10.60);
+    et.addClassement(v3, 24.30);
+
+    vector<Classement> clas = et.getClassementsProvisoire();
 
 
-    /*
-    Utilisateur User2 = Utilisateur();
-    cout << endl << User2.getNom() << endl;
-    User2 = User;
-    User2.getRegates()[User.shearchVoilierById(1)].description();
-    */
+    cout<< "\t\t\tCLASSEMENT PROVISOIRE"<<endl<<endl<<endl;
+    for(int i=0;i<clas.size();i++)
+        cout<<"\t"<<clas[i].getDescription()<<endl<<endl;
 
+
+    vector<Classement> clas2 = et.getClassementsFinal();
+        cout<< "\t\t\tCLASSEMENT DEFINITIF"<<endl<<endl<<endl;
+
+        for(int i=0;i<clas2.size();i++)
+            cout<<"\t"<<clas2[i].getDescription()<<endl<<endl;
 
     return 0;
 }

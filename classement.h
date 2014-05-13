@@ -25,11 +25,14 @@ public:
     /// Constructeur Par default
     Classement();
     /// Constructeur Param
-    Classement(Voilier & value, int place, float temps);
+    Classement(Voilier & value, float temps);
     /// Constructeur Par recopie
     Classement(const Classement & Source);
     /// Opérateur d'affectation
     Classement& operator =(const Classement& Source);
+
+    bool operator <(const Classement&) const;
+
     /// Destructeur
     ~Classement();
 
@@ -49,7 +52,7 @@ public:
     Voilier *getVoilier() const;
     void setVoilier(Voilier *value);
 
-    void description();
+    string getDescription();
 
 };
 

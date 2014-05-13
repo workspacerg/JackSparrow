@@ -51,8 +51,8 @@ public:
     int getNumOrdre() const;
     void setNumOrdre(int value);
 
-    vector<Classement> getClassementsProvisoire() const;
-    vector<Classement> getClassementsFinal() const;
+    vector<Classement> getClassementsProvisoire();
+    vector<Classement> getClassementsFinal();
     void setClassements(const vector<Classement> &value);
 
     ///
@@ -60,7 +60,7 @@ public:
     ///
 
     void description();
-    void addClassement(Voilier& value, int place , float temps);
+    void addClassement(Voilier& value, float temps);
 
 };
 

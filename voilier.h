@@ -21,9 +21,11 @@ private:
     float getCoeff(float);
 public:
     Voilier();
+    ~Voilier();
     Voilier(int id, string nom, float longueur, float poids);
     void description();
-
+    float getCoeff();
+    string getNom();
 
 };
 

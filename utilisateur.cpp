@@ -116,7 +116,7 @@ void Utilisateur::addEtapeToRegate(int _idEtape , string _nomEtape, int _distanc
 
 }
 
-void Utilisateur::addVoilierToRegate(int id, string nom, float longueur, float poids, float coef, int idRegate)
+void Utilisateur::addVoilierToRegate(int id, string nom, float longueur, float poids, int idRegate)
 {
 
     if (shearchVoilierById(idRegate) == -1)
@@ -125,7 +125,7 @@ void Utilisateur::addVoilierToRegate(int id, string nom, float longueur, float p
         return ;
     }
 
-    regates[shearchVoilierById(idRegate)].addVoilier(id,nom,longueur,poids,coef);
+    regates[shearchVoilierById(idRegate)].addVoilier(id,nom,longueur,poids);
 
 }
 
