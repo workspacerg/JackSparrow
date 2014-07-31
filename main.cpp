@@ -11,6 +11,8 @@ int main()
     // Création utilisateur
     Utilisateur User = Utilisateur("Romain");
 
+
+
     // Création d'une régate
     User.addRegate(1, "Capitain crochet2");
 
